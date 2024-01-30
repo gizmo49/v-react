@@ -1,0 +1,101 @@
+@import "assets/scss/master";
+
+.custom__card {
+    padding: 1.25rem 1.5rem;
+    padding-bottom: 0;
+    border-radius: 0.625rem;
+    border: 1px solid $border_highlight_color;
+    &--heading{
+        border-bottom: 1px solid $border_highlight_color;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5px;
+        span{
+            color: #626374;
+            font-size: 12px;
+        }
+        p {
+            color: $black__theme_color;
+            font-size: 14px;
+        }
+    }
+}
+
+.accordion__toggle {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    span {
+        margin-right: 10px;
+        color: #103900;
+    }
+    svg {
+        transform: rotate(0deg) !important;
+        transition: all 1s;
+    }
+    &.active {
+        svg {
+            transform: rotate(180deg) !important;
+        }
+    }
+}
+
+.accordion__card--item {
+    &:last-child {
+        .accordion__header {
+            border: 0;
+        }
+    }
+    &.active {
+        .accordion__header {
+            border: 0;
+        }
+    }
+    .accordion__body {
+        // display: none !important;
+        margin-bottom: 1rem;
+    }
+    .accordion__header {
+        position: relative;
+        padding: 0;
+        border: 0;
+        margin:30px 0;
+        cursor: pointer;
+        &::before {
+            content: "";
+            width: 0.5px;
+            height: 100%;
+            display: block;
+            background: #8de10e;
+            position: absolute;
+            left: 10px;
+            z-index: -1;
+        }
+
+        span {
+            color: #83849a;
+            font-size: 12px;
+            letter-spacing: 0.15px;
+            &.price {
+                font-size: 14px;
+            }
+        }
+        .sub_text {
+            text-transform: capitalize;
+            letter-spacing: 0.15px;
+            h6 {
+                color: $black__theme_color;
+                font-family: $primary_font_family--bold;
+                font-size: 14px;
+                letter-spacing: 0.25px;
+                margin-bottom: 5px;
+            }
+            p {
+                font-size: 0.875rem;
+                color: $muted__theme_color_2;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

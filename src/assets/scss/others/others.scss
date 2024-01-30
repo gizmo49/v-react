@@ -1,0 +1,298 @@
+.auth__left {
+    padding: 5rem;
+}
+
+#socialConnect {
+    margin: 2rem 0;
+}
+
+.mason__img {
+    width: 100%;
+    height: auto;
+}
+.masonary__cover {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.iti-flag {
+    display: none;
+}
+
+.profile__form {
+    text-align: center;
+    h6 {
+        font-family: $primary_font_family--bold;
+        font-size: 22px;
+        margin: 20px 0;
+    }
+    p {
+        color: #5c6b7e;
+        font-size: 14px;
+    }
+}
+
+.avatar__file--input {
+    img {
+        width: 98px;
+        height: 98px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        margin: auto;
+    }
+    span {
+        color: #83849a;
+        font-size: 14px;
+    }
+}
+
+.post--minimal {
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+    img {
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+    h6 {
+        color: #283219;
+        font-family: $primary_font_family--bold;
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .review__summary {
+        display: flex;
+        align-items: center;
+        span {
+            color: #83849a;
+            font-size: 14px;
+            letter-spacing: 0.25px;
+            display: flex;
+            align-items: center;
+        }
+        svg {
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .avg__rating {
+            display: flex;
+            align-items: center;
+        }
+        .circle {
+            margin: auto 5px;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: #83849a;
+        }
+    }
+}
+.img-hover-zoom {
+    height: 270px; /* Modify this according to your need */
+    overflow: hidden; /* Removing this will break the effects */
+    border-radius: 16px;
+
+    &--slowmo {
+        img {
+            transform-origin: 50% 65%;
+            transition:
+                transform 5s,
+                filter 3s ease-in-out;
+            // filter: brightness(150%);
+        }
+        &:hover {
+            img {
+                filter: brightness(100%);
+                transform: scale(3);
+            }
+        }
+    }
+}
+
+.custom--icon {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-color: #283219;
+    display: block;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    &--sm {
+        width: 14px;
+        height: 14px;
+        content: "";
+        display: block;
+    }
+
+    &.go-back {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/a_180/v1706615444/u_arrow-up_kcic8a.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/a_180/v1706615444/u_arrow-up_kcic8a.svg");
+        transform: rotate(270deg);
+        margin-top: -2px;
+    }
+
+    &.calender {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486119/Vector_1_z8qad9.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486119/Vector_1_z8qad9.svg");
+        background-color: #8de10e;
+    }
+    &.location {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706487515/Vector_8_xjqr5m.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706487515/Vector_8_xjqr5m.svg");
+        background-color: #8de10e;
+    }
+    &.bank-note {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486208/Banknote_2_xzoija.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486208/Banknote_2_xzoija.svg");
+        background-color: #8de10e;
+    }
+    &.airplane {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486122/Vector_2_gcxcnz.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486122/Vector_2_gcxcnz.svg");
+        background-color: #8de10e;
+        width: 16px;
+        height: 16px;
+        &--lg {
+            
+            mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706500839/Vector_9_ik6g82.svg");
+            -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706500839/Vector_9_ik6g82.svg");
+            background-color: #8de10e;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &.mountain {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486119/Vector_3_vvf3ql.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486119/Vector_3_vvf3ql.svg");
+        background-color: #8de10e;
+    }
+    &.boat {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486118/Vector_4_xdakry.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486118/Vector_4_xdakry.svg");
+        background-color: #8de10e;
+    }
+    &.swimming {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486121/Vector_5_xci6xm.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486121/Vector_5_xci6xm.svg");
+        background-color: #8de10e;
+    }
+   
+    &.big-lock {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486124/Vector_6_gl1vnk.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486124/Vector_6_gl1vnk.svg");
+        background-color: #8de10e;
+    }
+    &.add-new {
+        mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486123/Vector_7_zporod.svg");
+        -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486123/Vector_7_zporod.svg");
+        background-color: #8de10e;
+        width: 17px;
+        height: 17px;
+    }
+}
+
+.icon__textpair {
+    color: #626374;
+    font-family: $primary_font_family--light;
+    font-size: 12px;
+    letter-spacing: 0.25px;
+    display: flex;
+    align-items: center;
+    &--group {
+        display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+    }
+    .custom--icon{
+        background-color: #A7D267;
+        margin-right: 4px;
+    }
+}
+
+
+.info-pill {
+    border-radius: 18px;
+    background: #F9F9F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:34px;
+    padding: 0 12px;
+    &--group {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        gap: 9px;
+    }
+    span {
+        color: #5C6B7E;
+        font-size: 12px;
+        letter-spacing: 0.15px;
+    }
+    .custom--icon{
+        margin-right: 5px;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.buy__container {
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    background: url("https://res.cloudinary.com/metacare/image/upload/v1706532554/Frame_1000003943_rbpuaz.svg") no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .buy__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background: #FAFAFA;
+        border-radius: 16px;
+        width: 80%;
+        padding: 1rem;
+        text-align: center;
+        border: 0.5px solid #E7E7E7;
+        .custom--icon {
+            margin: 20px 0;
+        }
+        p {
+            font-size: 12px;
+            letter-spacing: 0.15px;
+            line-height: 18px;
+            color: #626374;
+        }
+        button {
+            font-size: 14px;
+            height: auto;
+        }
+    }
+}
+
+.itinerary__cover {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.itinerary__overview {
+    padding: 20px 0;
+    h6.heading2 {
+        font-size: 22px !important;
+    }
+}

@@ -1,0 +1,31 @@
+/* START OF HOME VIEWS TRANSITION */
+
+.home-views-appear {
+    opacity: 0;
+
+    &.home-views-appear-active {
+        opacity: 1;
+        transition: opacity 2s ease-in;
+    }
+}
+
+.home-views-enter {
+    opacity: 0;
+
+    &.home-views-enter-active {
+        opacity: 1;
+        transition: all 1s ease-in;
+    }
+}
+
+.home-views-leave {
+    opacity: 1;
+
+    &.home-views-leave-active {
+        opacity: 0;
+        transform: translateY(-200px);
+        transition: 5s ease-in;
+    }
+}
+
+/* END OF HOME VIEWS TRANSITION */

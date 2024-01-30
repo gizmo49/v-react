@@ -1,0 +1,22 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#a0f81c",
+        "activityBar.inactiveForeground": "#2726269f",
+        "activityBar.foreground": "#000",
+        "titleBar.activeBackground": "#a0f81c",
+        "titleBar.activeForeground": "#0c0403",
+        "statusBar.background" : "#a0f81c",
+        "statusBar.foreground": "#2726269f",
+    },
+    "prettier.jsxSingleQuote": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.tabWidth": 4,
+    "prettier.useEditorConfig": false,
+    // help with tab suggestions
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "cSpell.words": ["CLOUDINARY", "DATAMODE", "keyphrase", "Mssg"]
+
+}

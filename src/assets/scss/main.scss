@@ -1,0 +1,250 @@
+@import "./master";
+
+html {
+    /* min-height: 100%; */
+    position: relative;
+    height: auto !important;
+}
+
+html,
+body {
+    font-family: "PP Mori Regular";
+    color: #000000;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+::-webkit-scrollbar {
+    width: 0 !important; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+// .form-control {
+// 	// transition: all 0.5s;
+// }
+.dnd-copy ~ div {
+    transform: none !important;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.fw-medium {
+    font-weight: 500;
+    font-family: $primary_font_family--medium;
+}
+
+.fw-bold {
+    font-family: $primary_font_family--semi-bold;
+}
+
+.fw-bolder {
+    font-family: $primary_font_family--bold;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-120 {
+    width: 120%;
+}
+
+.text-neutral {
+    color: #23262f;
+}
+
+.flex-gap {
+    gap: 0.625rem;
+    &--1 {
+        gap: 0.5rem;
+    }
+    &--2 {
+        gap: 0.75rem;
+    }
+    &--3 {
+        gap: 1rem;
+    }
+    &--4 {
+        gap: 1.5rem;
+    }
+}
+
+.w-0 {
+    width: 0;
+}
+
+.h-0 {
+    height: 0;
+}
+
+h1.no-content {
+    font-size: 1.25rem;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.scrollbar {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+    }
+
+    @media screen and (min-width: 992px) {
+        scrollbar-width: 0.313rem;
+        &--white {
+            &::-webkit-scrollbar-track {
+                background: #fff !important;
+            }
+        }
+        &::-webkit-scrollbar {
+            display: inline;
+            width: 0.313rem;
+            height: 0.313rem;
+        }
+        &::-webkit-scrollbar-track {
+            background: #fafafc;
+            border-radius: 3.125rem;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #e6e6ed;
+            border-radius: 3.125rem;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #cdcdd0;
+        }
+    }
+}
+
+.scrollbar-wide {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+    }
+
+    @media screen and (min-width: 992px) {
+        scrollbar-width: 1.25rem;
+        &::-webkit-scrollbar {
+            display: inline;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+        &::-webkit-scrollbar-track {
+            background: #fafafc;
+            border-radius: 1.25rem;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #e6e6ed;
+            border-radius: 1.25rem;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #4d4b4b;
+        }
+    }
+}
+
+.custom-scroll-bar {
+    &::-webkit-scrollbar {
+        display: inline;
+        width: 5px !important;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 3px !important;
+        #{$white__mode__theme__selector} {
+            background: #fafafc !important;
+        }
+        #{$dark__mode__theme__selector} {
+            background: $dark__mode__theme__color !important;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #e6e6ed;
+        border-radius: 3px;
+        #{$dark__mode__theme__selector} {
+            background: $dark__mode__theme__text__color;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #4d4b4b;
+        #{$dark__mode__theme__selector} {
+            background: $dark__mode__theme__text__color;
+        }
+    }
+}
+
+.toast {
+    &:not(.show) {
+        display: block;
+    }
+}
+
+.error {
+    border: 0.063rem solid $danger__theme_color !important;
+}
+
+.error-msg {
+    color: $danger__theme_color !important;
+}
+
+.flex__between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-dark {
+    #{$dark__mode__theme__selector} {
+        color: $dark__mode__theme__text__color !important;
+    }
+}
+
+.text-black {
+    #{$dark__mode__theme__selector} {
+        color: $dark__mode__theme__text__color !important;
+    }
+}
+
+.text-grey {
+    #{$dark__mode__theme__selector} {
+        color: $dark__mode__theme__text__color !important;
+    }
+}
+
+.text-primary {
+    #{$dark__mode__theme__selector} {
+        color: $dark__mode__primary__theme_muted_color !important;
+    }
+}
+
+.bg-success {
+    #{$dark__mode__theme__selector} {
+        color: $dark__mode__theme__green__muted__color !important;
+    }
+}
+main {
+    margin-top: 90px;
+}
+
+hr {
+    background-color: #EBECF7;
+    height: 1px;
+    border: 0;
+}

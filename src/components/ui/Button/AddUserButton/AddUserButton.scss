@@ -1,0 +1,19 @@
+@import "assets/scss/_master.scss";
+
+.add__user__btn {
+    display: flex;
+    align-items: center;
+    color: $primary__theme_color;
+    gap: 0.489rem;
+    cursor: pointer;
+    #{$dark__mode__theme__selector} {
+        color: $dark__mode__primary__theme_muted_color;
+    }
+    svg {
+        path {
+            #{$dark__mode__theme__selector} {
+                fill: $dark__mode__primary__theme_muted_color !important;
+            }
+        }
+    }
+}

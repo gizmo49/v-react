@@ -1,0 +1,44 @@
+
+
+.intl-tel-input {
+	display: block !important;
+	border: 0 !important;
+	border-radius: 32px !important;
+	// overflow: hidden;
+    .arrow {
+        display: none;
+    }
+	.selected-flag {
+		// border-radius: 4px 0 0 4px !important;
+		border-top-left-radius: 32px !important;
+		border-bottom-left-radius: 32px !important;
+		background-color: transparent !important;
+		outline: none !important;
+	
+		.selected-dial-code {
+		    color: #595c5f !important;
+            font-size: 14px !important;
+            padding-top: 3px;
+			// font-weight: bolder;
+		}
+		.iti-arrow {
+			display: none;
+		}
+		// .iti-flag {
+		// 	margin-top: 13px;
+		// }
+	}
+	.country-list {
+		border: 1px solid #B8B8B8 !important;
+		border-radius: 3px;
+	
+		.divider {
+			padding-bottom: 0 !important;
+			margin-bottom: 0 !important;
+			border-bottom: 1px solid #B8B8B8 !important;
+		}
+	}
+	input {
+		padding-left: 70px !important;
+	}
+}

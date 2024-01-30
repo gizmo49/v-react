@@ -1,0 +1,29 @@
+@import "../../../assets/scss/master";
+
+.customer__qoute {
+    position: absolute;
+    padding: 2px;
+    width: 60%;
+    left: 30px;
+    bottom: 10%;
+    z-index: 1;
+
+    background: linear-gradient(to right, #eabfff, #8726b776, #98f9ff, #ffffffc1);
+    border-radius: 10px;
+    overflow: hidden;
+    .content {
+        background: linear-gradient(106deg, rgb(122 122 131 / 31%), rgba(0, 0, 0, 0.26)), url(noise.svg);
+        background-size: cover;
+        backdrop-filter: blur(50px);
+        padding: 1rem 2rem;
+        padding-right: 4rem;
+        border-radius: 8px;
+        p {
+            font-family: $secondary_font_family--medium;
+            font-size: 22px;
+            color: #fff;
+            letter-spacing: 0.25px;
+            margin-bottom: 0;
+        }
+    }
+}

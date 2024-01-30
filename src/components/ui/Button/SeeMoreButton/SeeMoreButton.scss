@@ -1,0 +1,10 @@
+@import "assets/scss/master";
+
+.link {
+    text-decoration: none;
+    svg {
+        path {
+            fill: $dark__mode__primary__theme_muted_color !important;
+        }
+    }
+}

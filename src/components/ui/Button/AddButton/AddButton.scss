@@ -1,0 +1,124 @@
+@import "assets/scss/mixins/mixins.scss";
+@import "assets/scss/_master.scss";
+
+.add-button {
+    font-family: $primary_font_family--medium;
+    font-weight: 500;
+    font-size: 1.125rem;
+    border-radius: 0.625rem;
+    padding: 0.438rem 1.438rem;
+    height: 3.438rem;
+    white-space: nowrap;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    color: $primary__theme_color !important;
+    background: $light__theme_color;
+    #{$dark__mode__theme__selector} {
+        background-color: $dark__mode__theme__background__color;
+        color: $dark__mode__primary__theme_muted_color !important;
+    }
+    &__major{
+        &--submit {
+            border: 0.063rem solid $success__green_color;
+            color: $success__green_color;
+        }
+    }
+    &--add {
+        color: $black__theme_color !important;
+        font-weight: lighter;
+        font-size: 12px;
+        // letter-spacing: -0.0.125rem;
+        // line-height: 0.938rem;
+        display: flex;
+        align-items: center;
+        // justify-content: flex-end;
+        width: 100%;
+        padding: 0;
+       
+        .add-new {
+            margin-right: 0.5rem;
+    
+        }
+        .addLoaderIcon div:after {
+           background-color: $primary__theme_color !important;
+           #{$dark__mode__theme__selector} {
+                background-color: $dark__mode__primary__theme_color !important;
+            }
+        }
+    }
+    &-primary {
+        background: $primary__theme_color;
+        #{$dark__mode__theme__selector} {
+            background: $dark__mode__primary__theme_color;
+        }
+    }
+    &-sm {
+        font-size: 0.875rem;
+        height: 3rem;
+    }
+   
+    &-xsm {
+        height: 2.5rem;
+    }
+    &-xs {
+        font-size: 0.875rem;
+        height: 2.063rem;
+        display: flex;
+        align-items: center;
+    }
+    &-muted {
+        color: $black__theme_color;
+        #{$dark__mode__theme__selector} {
+            color: $dark__mode__theme__white__color;
+        }
+    }
+    &-faded {
+        color: $muted__theme_color;
+        #{$dark__mode__theme__selector} {
+            color: $dark__mode__theme__text__color;
+        }
+    }
+    &-success,
+    &-danger {
+        color: $light__theme_color;
+        #{$dark__mode__theme__selector} {
+            color: $dark__mode__theme__white__color;
+        }
+    }
+
+    &[class*="btn-outline"]:hover {
+        color: $light__theme_color;
+        #{$dark__mode__theme__selector} {
+            color: $dark__mode__theme__white__color;
+        }
+    }
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    &:hover {
+        border: none;
+    }
+    @include responsiveMobile($sm) {
+        height: 3rem;
+    }
+    &.transparent {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0;
+
+        &:hover {
+            color: default;
+        }
+    }
+    &.text__meta-purple {
+        &:hover {
+            color: $primary__theme_color;
+            #{$dark__mode__theme__selector} {
+                color: $dark__mode__primary__theme_muted_color;
+            }
+        }
+    }
+}

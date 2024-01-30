@@ -1,0 +1,12 @@
+@import "../master";
+
+.err-page {
+	h1 {
+		font-size: 6.25rem;
+		font-family: $primary_font_family--bold;
+	}
+
+	p {
+		font-size: 1.25rem;
+	}
+}
