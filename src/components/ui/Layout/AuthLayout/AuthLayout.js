@@ -17,8 +17,8 @@ const images = [
     "https://res.cloudinary.com/metacare/image/upload/v1705559965/velio/Rectangle_2081_1_l4oebf.png",
     "https://res.cloudinary.com/metacare/image/upload/v1705559988/velio/Rectangle_2112_1_ol0gsj.png",
     "https://res.cloudinary.com/metacare/image/upload/v1705560015/velio/Rectangle_2113_zjcqi6.png",
-    "https://res.cloudinary.com/metacare/image/upload/v1705559949/velio/Rectangle_2084_1_x6luyl.png"
-
+    "https://res.cloudinary.com/metacare/image/upload/v1705559949/velio/Rectangle_2084_1_x6luyl.png",
+    "https://res.cloudinary.com/metacare/image/upload/v1706657103/Rectangle_2113_1_o4y6dl.png", "https://res.cloudinary.com/metacare/image/upload/v1706657102/Rectangle_3060_euf11u.png", "https://res.cloudinary.com/metacare/image/upload/v1706657102/Rectangle_3060_4_bicxyh.png", "https://res.cloudinary.com/metacare/image/upload/v1706657094/Rectangle_2078_2_ew7za7.png", "https://res.cloudinary.com/metacare/image/upload/v1706657098/Rectangle_3060_3_pzrfai.png", "https://res.cloudinary.com/metacare/image/upload/v1706657100/Rectangle_3060_2_aawozn.png", "https://res.cloudinary.com/metacare/image/upload/v1706657100/Rectangle_3060_2_aawozn.png", "https://res.cloudinary.com/metacare/image/upload/v1706657093/Rectangle_2112_2_bogzwo.png", "https://res.cloudinary.com/metacare/image/upload/v1706657093/Rectangle_2078_3_jxr01p.png"
 ]
 
 
@@ -59,27 +59,27 @@ const AuthLayout = ({ children }) => {
                     >
                         <Masonry columnsCount={3} gutter="10px">
                             {locationPlace.map((image, i) => (
-                             
-                                        <AnimatePresence>
-                                            <motion.div
-                                                key={image}
-                                                style={{ width: "100%", display: "block" }}
-                                                initial={{ y: `30%`, opacity: 0 }}
-                                                animate={{ y: 10, opacity: 1 }}
-                                                exit={{ y: `-30%`, opacity: 0, zIndex: -1 }}
-                                                transition={{ duration: 2, delay: 1 * i }}
 
-                                            >
-                                                <img
-                                  
-                                                    src={image}
-                                                    alt="rec"
-                                                    className='mason__img'
-                                                />
+                                <AnimatePresence>
+                                    <motion.div
+                                        key={image}
+                                        style={{ width: "100%", display: "block" }}
+                                        initial={{ y: `30%`, opacity: 0 }}
+                                        animate={{ y: 10, opacity: 1 }}
+                                        exit={{ y: `-30%`, opacity: 0, zIndex: -1 }}
+                                        transition={{ duration: 2, delay: 1 * i }}
 
-                                            </motion.div>
-                                        </AnimatePresence>
-                           
+                                    >
+                                        <img
+
+                                            src={image}
+                                            alt="rec"
+                                            className='mason__img'
+                                        />
+
+                                    </motion.div>
+                                </AnimatePresence>
+
                             ))}
                         </Masonry>
                     </ResponsiveMasonry>

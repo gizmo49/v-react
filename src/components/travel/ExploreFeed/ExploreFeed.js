@@ -1,13 +1,13 @@
 import React from 'react';
 import { ReactComponent as ReviewStar } from "assets/images/icons/star.svg";
-// import { AnimatePresence, motion } from 'framer-motion';
-import { randomInteger } from 'utils/helper';
+// // import { AnimatePresence, motion } from 'framer-motion';
+// import { randomInteger } from 'utils/helper';
 import { sampleFeed } from './data';
 import { Link } from 'react-router-dom';
 
 const ExplorePost = ({ post }) => {
-    const randindex = randomInteger(0, post.iternaries?.length - 1)
-    const coverImage = post.iternaries[randindex];
+    // const randindex = post.iternaries?.length - 1
+    const coverImage = post.iternaries[0];
     return (
         <Link to={`/explore/${post?.slug}`} className="post--minimal">
             <div className="img-hover-zoom img-hover-zoom--slowmo">
