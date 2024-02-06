@@ -3,8 +3,13 @@ import { ReactComponent as BrandLogo } from "assets/logo.svg";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { AnimatePresence, motion } from 'framer-motion';
 import CustomerQoute from 'components/ui/CustomerQoute/CustomerQoute';
-import { useLazyEffect } from 'utils/hooks';
+// import { useLazyEffect } from 'utils/hooks';
 import { Link } from 'react-router-dom';
+import LazyLoadedImage from 'components/ui/LazyLoadedImage/LazyLoadedImage';
+import PreAuthScreen from 'components/auth/PreAuthScreen/PreAuthScreen';
+import { useCheckMobileScreen } from 'utils/hooks';
+import FadeIn from 'components/ui/effects/FadeIn';
+
 
 const images = [
     "https://res.cloudinary.com/metacare/image/upload/v1705559953/velio/Rectangle_2078_1_ep6koc.png",
@@ -18,47 +23,66 @@ const images = [
     "https://res.cloudinary.com/metacare/image/upload/v1705559988/velio/Rectangle_2112_1_ol0gsj.png",
     "https://res.cloudinary.com/metacare/image/upload/v1705560015/velio/Rectangle_2113_zjcqi6.png",
     "https://res.cloudinary.com/metacare/image/upload/v1705559949/velio/Rectangle_2084_1_x6luyl.png",
-    "https://res.cloudinary.com/metacare/image/upload/v1706657103/Rectangle_2113_1_o4y6dl.png", "https://res.cloudinary.com/metacare/image/upload/v1706657102/Rectangle_3060_euf11u.png", "https://res.cloudinary.com/metacare/image/upload/v1706657102/Rectangle_3060_4_bicxyh.png", "https://res.cloudinary.com/metacare/image/upload/v1706657094/Rectangle_2078_2_ew7za7.png", "https://res.cloudinary.com/metacare/image/upload/v1706657098/Rectangle_3060_3_pzrfai.png", "https://res.cloudinary.com/metacare/image/upload/v1706657100/Rectangle_3060_2_aawozn.png", "https://res.cloudinary.com/metacare/image/upload/v1706657100/Rectangle_3060_2_aawozn.png", "https://res.cloudinary.com/metacare/image/upload/v1706657093/Rectangle_2112_2_bogzwo.png", "https://res.cloudinary.com/metacare/image/upload/v1706657093/Rectangle_2078_3_jxr01p.png"
+    "https://res.cloudinary.com/metacare/image/upload/v1706657103/Rectangle_2113_1_o4y6dl.png",
+    "https://res.cloudinary.com/metacare/image/upload/v1706657102/Rectangle_3060_euf11u.png",
+    "https://res.cloudinary.com/metacare/image/upload/v1706657102/Rectangle_3060_4_bicxyh.png",
+    "https://res.cloudinary.com/metacare/image/upload/v1706657094/Rectangle_2078_2_ew7za7.png",
+    "https://res.cloudinary.com/metacare/image/upload/v1706657098/Rectangle_3060_3_pzrfai.png",
+    "https://res.cloudinary.com/metacare/image/upload/v1706657100/Rectangle_3060_2_aawozn.png",
+    "https://res.cloudinary.com/metacare/image/upload/v1706657100/Rectangle_3060_2_aawozn.png",
+    "https://res.cloudinary.com/metacare/image/upload/v1706657093/Rectangle_2112_2_bogzwo.png",
+    "https://res.cloudinary.com/metacare/image/upload/v1706657093/Rectangle_2078_3_jxr01p.png"
 ]
 
 
-const AuthLayout = ({ children }) => {
-    const [locationPlace, setLocationPlaces] = useState(images)
+const AuthLayout = ({ children, usePreview }) => {
+    const isMobile = useCheckMobileScreen();
+    const defaultShowSplash = (usePreview && isMobile);
+    const [showSplash, toggleSplashView] = useState(defaultShowSplash)
 
-    useLazyEffect(() => {
-        const i = setInterval(() => {
-            setLocationPlaces(([first, second, ...rest]) => [...rest, first, second]);
-        }, 10000);
+    // const [locationPlace, setLocationPlaces] = useState(images)
 
-        return () => clearInterval(i);
-        //eslint-disable-next-line
-    }, []);
+    // useLazyEffect(() => {
+    //     const i = setInterval(() => {
+    //         setLocationPlaces(([first, second, ...rest]) => [...rest, first, second]);
+    //     }, 10000);
+
+    //     return () => clearInterval(i);
+    //     //eslint-disable-next-line
+    // }, []);
+
     return (
         <div className='auth__layout'>
             <div className="row">
-                <div className="col-lg-5 auth__left">
-                    <div className="row justify-content-center">
-                        <div className="col-md-10">
-                            <Link to="/">
-                                <BrandLogo />
-                            </Link>
-                            <div className="pt-5">
-                                <h1>Join to unlock the<br /> best of Velio</h1>
-                            </div>
-                            <div>
-                                {children}
-                            </div>
-                        </div>
-                    </div>
+                <div className="col-lg-5 col-md-6 auth__left">
 
+                    {
+                        (showSplash) ? <PreAuthScreen removeSplash={() => toggleSplashView(false)} /> :
+                            <FadeIn>
+                                <div className="row justify-content-center">
+                                    <div className="col-lg-10">
+
+                                        <Link to="/">
+                                            <BrandLogo />
+                                        </Link>
+                                        <div className="pt-5">
+                                            <h1>Join to unlock the<br /> best of Velio</h1>
+                                        </div>
+                                        <div>
+                                            {children}
+                                        </div>
+                                    </div>
+                                </div>
+                            </FadeIn>
+                    }
                 </div>
-                <div className="col-lg-7 position-relative pe-5">
+                <div className="col-lg-7 col-md-6 position-relative pe-5 d-none d-md-block">
                     <ResponsiveMasonry
                         className='masonary__cover'
                         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
                     >
                         <Masonry columnsCount={3} gutter="10px">
-                            {locationPlace.map((image, i) => (
+                            {images.map((image, i) => (
 
                                 <AnimatePresence>
                                     <motion.div
@@ -70,8 +94,7 @@ const AuthLayout = ({ children }) => {
                                         transition={{ duration: 2, delay: 1 * i }}
 
                                     >
-                                        <img
-
+                                        <LazyLoadedImage
                                             src={image}
                                             alt="rec"
                                             className='mason__img'

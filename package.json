@@ -18,15 +18,18 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-intl-tel-input": "^8.2.0",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-masonry-component": "^6.3.0",
     "react-measure": "^2.5.2",
     "react-responsive-masonry": "^2.1.7",
     "react-router-dom": "^5.0.1",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.1",
     "react-svg": "^16.1.32",
     "react-transition-group": "1.x",
     "reactstrap": "^9.2.2",
     "sass": "^1.69.7",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

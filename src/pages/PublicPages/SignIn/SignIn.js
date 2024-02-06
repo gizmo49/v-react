@@ -4,9 +4,8 @@ import AuthLayout from "components/ui/Layout/AuthLayout/AuthLayout";
 import { SignInForm } from "components/auth/SignInForm/SignInForm";
 import SocialConnect from "components/auth/SocialConnect/SocialConnect";
 import { Link } from "react-router-dom";
-
-import "./SignIn.scss";
 import UpdateUserProfileModal from "components/auth/SignInForm/UpdateUserProfileModal/UpdateUserProfileModal";
+import "./SignIn.scss";
 
 
 const SignIn = () => {

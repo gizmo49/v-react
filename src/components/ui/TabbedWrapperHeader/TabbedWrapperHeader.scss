@@ -1,0 +1,46 @@
+@import "assets/scss/master";
+
+.tabbed__header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border__theme_color;
+    width: 100%;
+    position: relative;
+    // z-index: 1000;
+    background: #fff;
+
+    .tabbed__element {
+        padding: 10px 5px;
+        font-size: 14px;
+        white-space: nowrap;
+        color: $muted__theme_color_2 !important;
+        letter-spacing: 0.15px;
+        line-height: 24px;
+        text-decoration: none;
+        margin: 0;
+        margin-right: 20px;
+        transition: all 2s;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 0;
+            bottom: -2px;
+            width: 0%;
+            height: 2px;
+            background: #A7D267;
+            transition: all 1s;
+        }
+        &.active {
+            color: $black__theme_color  !important;
+            font-family: $secondary_font_family--bold;
+            font-size: 18px;
+
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}

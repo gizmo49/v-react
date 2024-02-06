@@ -12,7 +12,7 @@ const headerNavigation = [
     },
     {
         title: "Profile",
-        path: "/profile"
+        path: "/me"
     }
 ]
 
@@ -26,7 +26,7 @@ const HeaderNavs = ({ showByDefault }) => {
                         className={`nav-item`}
                         key={index}
                     >
-                        <Link className='nav-link' href={item.path} key={index}>
+                        <Link className='nav-link' to={item.path} key={index}>
                             {item.title}
                         </Link>
                     </li>

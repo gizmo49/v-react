@@ -1,5 +1,6 @@
 @import "assets/scss/mixins/mixins.scss";
 @import "assets/scss/_master.scss";
+@import "assets/scss/_include-media-lib/include-media";
 
 .btn {
     font-family: $primary_font_family;
@@ -12,7 +13,9 @@
     height: 56px;
     white-space: nowrap;
     text-transform: capitalize !important;
-
+    @include media("<=small-screen" ) {
+        font-size: 1rem;
+    }
     &--add {
         border: 0 !important;
     }
@@ -21,7 +24,7 @@
         border: 0 !important;
         background: #F3F4FA;
         border-radius: 32px;
-        width: 100%;
+        width: fit-content;
         color: #283219;
         font-size: 14px;
         letter-spacing: 0.15px;

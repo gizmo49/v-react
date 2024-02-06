@@ -5,9 +5,9 @@ import { ReactComponent as ReviewStar } from "assets/images/icons/star.svg";
 import { sampleFeed } from './data';
 import { Link } from 'react-router-dom';
 
-const ExplorePost = ({ post }) => {
+const ExplorePost = ({ post, index }) => {
     // const randindex = post.iternaries?.length - 1
-    const coverImage = post.iternaries[0];
+    const coverImage = `https://source.unsplash.com/random/900×70${index}/?vacation`;
     return (
         <Link to={`/explore/${post?.slug}`} className="post--minimal">
             <div className="img-hover-zoom img-hover-zoom--slowmo">
@@ -32,13 +32,13 @@ const ExploreFeed = () => {
                 sampleFeed.map((post, index) => (
                     <div
                         key={index}
-                        className='col-lg-2 pe-0'
+                        className='col-lg-2 col-sm-6 col-6 pe-0'
                     // initial={{ y: `30%`, opacity: 0 }}
                     // animate={{ y: 10, opacity: 1 }}
                     // exit={{ y: `-30%`, opacity: 0, zIndex: -1 }}
                     // transition={{ duration: 2, delay: 0.2 * index }}
                     >
-                        <ExplorePost post={post} />
+                        <ExplorePost post={post} index={index} />
                     </div>
                 ))
             }

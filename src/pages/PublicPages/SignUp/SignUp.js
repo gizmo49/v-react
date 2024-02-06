@@ -9,19 +9,22 @@ import UpdateUserProfileModal from "components/auth/SignInForm/UpdateUserProfile
 
 const SignUp = () => {
     const [showModal, setModalVisibility] = useState(false);
+    // const [showPreview, togglePreview] = useState(true)
+
     const showProfileUpdateModal = () => {
         setModalVisibility(true)
     }
-    
+
     return (
         <>
             <SEO title={"sign Up"} />
-            <AuthLayout>
+            <AuthLayout usePreview>
+
                 <SocialConnect />
                 <div className="py-3">
-                <h6><span>Or use email</span></h6>
+                    <h6><span>Or use email</span></h6>
                 </div>
-                <SignInForm {...{showProfileUpdateModal}}/>
+                <SignInForm {...{ showProfileUpdateModal }} />
                 <div className='auth__footnote'>
                     Already have an account?
                     <Link
@@ -32,8 +35,9 @@ const SignUp = () => {
                         Log in
                     </Link>
                 </div>
+
             </AuthLayout>
-            { showModal && <UpdateUserProfileModal closeModal={() => setModalVisibility(false)}/>}
+            {showModal && <UpdateUserProfileModal closeModal={() => setModalVisibility(false)} />}
         </>
     );
 };

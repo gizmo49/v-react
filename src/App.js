@@ -8,6 +8,7 @@ import SignIn from "pages/PublicPages/SignIn/SignIn";
 import ExploreLocation from "pages/travel/ExploreLocation/ExploreLocation";
 import SignUp from "pages/PublicPages/SignUp/SignUp";
 import ExplorePostView from "pages/travel/ExplorePostView/ExplorePostView";
+import ProfileView from "pages/dashboard/ProfileView/ProfileView";
 
 function App() {
     return (
@@ -32,6 +33,11 @@ function App() {
                     exact
                     path='/sign-up'
                     component={SignUp}
+                />
+                <Route
+                    exact
+                    path='/me'
+                    component={ProfileView}
                 />
             </Switch>
         </Router>

@@ -97,3 +97,18 @@
         font-family: $primary_font_family--medium;
     }
 }
+
+
+.preauth__txt {
+    h5 {
+        font-family: $secondary_font_family--bold;
+        font-size: 18px;
+        color: $black__theme_color;
+        letter-spacing: 0.15px;
+    }
+    p {
+        font-size: 14px;
+        color: #83849A;
+        letter-spacing: 0.02em;
+    }
+}

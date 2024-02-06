@@ -1,9 +1,20 @@
+@import "assets/scss/_include-media-lib/include-media";
+
 .auth__left {
     padding: 5rem;
+    @include media("<=large-screen") {
+        padding: 5rem 4rem;
+    }
+    @include media("<=small-screen") {
+        padding: 3rem 2rem;
+    }
 }
 
 #socialConnect {
     margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .mason__img {
@@ -157,7 +168,6 @@
         width: 16px;
         height: 16px;
         &--lg {
-            
             mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706500839/Vector_9_ik6g82.svg");
             -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706500839/Vector_9_ik6g82.svg");
             background-color: #8de10e;
@@ -180,7 +190,7 @@
         -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486121/Vector_5_xci6xm.svg");
         background-color: #8de10e;
     }
-   
+
     &.big-lock {
         mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486124/Vector_6_gl1vnk.svg");
         -webkit-mask-image: url("https://res.cloudinary.com/metacare/image/upload/v1706486124/Vector_6_gl1vnk.svg");
@@ -204,26 +214,25 @@
     align-items: center;
     &--group {
         display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    gap: 15px;
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        gap: 15px;
     }
-    .custom--icon{
-        background-color: #A7D267;
+    .custom--icon {
+        background-color: #a7d267;
         margin-right: 4px;
     }
 }
 
-
 .info-pill {
     border-radius: 18px;
-    background: #F9F9F9;
+    background: #f9f9f9;
     display: flex;
     align-items: center;
     justify-content: center;
-    height:34px;
+    height: 34px;
     padding: 0 12px;
     &--group {
         display: flex;
@@ -234,11 +243,11 @@
         gap: 9px;
     }
     span {
-        color: #5C6B7E;
+        color: #5c6b7e;
         font-size: 12px;
         letter-spacing: 0.15px;
     }
-    .custom--icon{
+    .custom--icon {
         margin-right: 5px;
         width: 16px;
         height: 16px;
@@ -249,7 +258,8 @@
     width: 100%;
     height: 500px;
     margin-top: 20px;
-    background: url("https://res.cloudinary.com/metacare/image/upload/v1706532554/Frame_1000003943_rbpuaz.svg") no-repeat;
+    background: url("https://res.cloudinary.com/metacare/image/upload/v1706532554/Frame_1000003943_rbpuaz.svg")
+        no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,12 +269,12 @@
         justify-content: center;
         align-items: center;
         margin: auto;
-        background: #FAFAFA;
+        background: #fafafa;
         border-radius: 16px;
         width: 80%;
         padding: 1rem;
         text-align: center;
-        border: 0.5px solid #E7E7E7;
+        border: 0.5px solid #e7e7e7;
         .custom--icon {
             margin: 20px 0;
         }
@@ -294,5 +304,105 @@
     padding: 20px 0;
     h6.heading2 {
         font-size: 22px !important;
+    }
+}
+
+// .bucket__group {
+//     height: 180px;
+//     border-radius: 12px;
+//     width: 100%;
+//     overflow: hidden;
+//     .row{
+//         height: 100%;
+//     }
+//     .col {
+//         padding: 0;
+//         img {
+//             width: 100%;
+//             height: auto;
+//         }
+//     }
+// }
+
+.bucket__group {
+    display: flex;
+    flex-wrap: wrap;
+    // width:400px;
+    height: 180px;
+    border-radius: 12px;
+    width: 100%;
+    overflow: hidden;
+    span {
+        min-width: 1%;
+        flex: 1 1;
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}
+
+
+.lite__h3p, .txt__layer{
+    h3 {
+        font-family: $secondary_font_family--bold;
+        font-weight: 700;
+        font-size: 18px;
+        color: $black__theme_color;
+        letter-spacing: 0.15px;
+    }
+    p {
+        font-family: $secondary_font_family--light;
+        font-size: 18px;
+        color: #5C6B7E;
+    }
+    &--headline {
+        p { 
+            font-size: 14px;
+            color: $black__theme_color;
+        }
+    }
+}
+.txt__layer {
+    margin-top: 2rem;
+    p {
+        font-size: 12px;
+    }
+}
+.user__badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.profile--picture {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    img {
+        width: 118px;
+        height: 118px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+#profileHeader {
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.slick-dots {
+    text-align: left;
+    margin-bottom: -1rem;
+    li{
+        margin: 0;
+        button::before {
+            color: #DCFBAE;
+            opacity: 0.8;
+            &.active {
+                color: $black__theme_color;
+            }
+        }
     }
 }

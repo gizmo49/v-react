@@ -1,6 +1,22 @@
 /* eslint-disable */
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import _ from "lodash";
+
+export const useCheckMobileScreen = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+    const handleWindowSizeChange = () => {
+            setWidth(window.innerWidth);
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    return (width <= 768);
+}
 
 export function useLazyEffect(effect, deps = [], wait = 300) {
     const cleanUp = useRef();
