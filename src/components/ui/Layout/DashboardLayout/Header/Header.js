@@ -4,10 +4,10 @@ import { ReactComponent as VelioLogo } from "assets/velio-logo.svg";
 import HeaderNavs from "./HeaderNavs/HeaderNavs";
 import "./Header.scss";
 
-const Header = () => {
+const Header = ({hideMobileNav}) => {
 
     return (
-        <header className="fixed-top" id="topHeader">
+        <header className={`fixed-top ${hideMobileNav ? 'd-none d-lg-block' : ''}`} id="topHeader">
             <div className="mint-container">
                 <nav className="navbar">
                     <Link
@@ -18,7 +18,7 @@ const Header = () => {
 
                     <HeaderNavs showByDefault />
 
-                    <ul className="end__nav">
+                    <ul className="end__nav d-none d-lg-flex ">
                         <li>
                             <Link
                                 className='cta__link inverse'
@@ -39,6 +39,10 @@ const Header = () => {
                             <VelioLogo />
                         </li>
                     </ul>
+
+                    <Link className="nav__avatar d-md-none" to='/me'>
+                        <img src="https://source.unsplash.com/random/200x200/?girl+avatar" alt="avatar"/>
+                    </Link>
                 </nav>
             </div>
             {/* <HomeBanner /> */}

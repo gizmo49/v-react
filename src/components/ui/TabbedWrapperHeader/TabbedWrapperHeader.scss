@@ -1,4 +1,5 @@
 @import "assets/scss/master";
+@import "assets/scss/_include-media-lib/include-media";
 
 .tabbed__header {
     display: flex;
@@ -11,6 +12,7 @@
 
     .tabbed__element {
         padding: 10px 5px;
+        padding-left: 0;
         font-size: 14px;
         white-space: nowrap;
         color: $muted__theme_color_2 !important;
@@ -21,7 +23,9 @@
         margin-right: 20px;
         transition: all 2s;
         position: relative;
-
+        @include media("<=small-screen"){
+            font-size: 12px;
+        }
         &::before {
             content: "";
             position: absolute;
@@ -36,7 +40,7 @@
         &.active {
             color: $black__theme_color  !important;
             font-family: $secondary_font_family--bold;
-            font-size: 18px;
+            // font-size: 18px;
 
             &::before {
                 width: 100%;

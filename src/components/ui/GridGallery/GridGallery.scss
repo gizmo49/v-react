@@ -1,0 +1,54 @@
+.custom-grid-wrapper {
+	>span {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		>img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 12px;
+		}
+	}
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    grid-auto-rows: 25%;
+    grid-auto-flow: row;
+    padding: 1rem 0;
+    height: 50vh;
+    margin-top: 1rem;
+    &.neg--top {
+        margin-top: -25%;
+        height: fit-content;
+        height: 100%;
+        overflow: scroll;
+        margin-bottom: 10%;
+    }
+	.wide {
+		grid-column: span 2;
+	}
+	.tall {
+		grid-row: span 2;
+	}
+	.big {
+		grid-column: span 2;
+		grid-row: span 2;
+	}
+    .blurred{
+        img {
+            filter: blur(10px);
+        }
+    }    
+}
+
+.grid--img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.preauth__txt {
+    margin-top: 4rem;
+}

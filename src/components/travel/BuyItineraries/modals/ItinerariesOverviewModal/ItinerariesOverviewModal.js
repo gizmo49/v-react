@@ -55,7 +55,7 @@ const ItinerariesOverviewModal = ({ closeModal, handleSuccess }) => {
 
 
     return (
-        <SideModal show={true} close={closeModal}>
+        <SideModal show={true} close={closeModal} closeIconType="simple">
             <div className='itinerary__overview'>
                 <h6 className='heading6'>Review the trip you want to unlock</h6>
                 <img src={itinerary?.cover} alt={itinerary.title} className='itinerary__cover' />
@@ -64,6 +64,7 @@ const ItinerariesOverviewModal = ({ closeModal, handleSuccess }) => {
                     <h6 className="heading2 mb-3">{itinerary?.title}</h6>
 
                     <div className="icon__textpair--group">
+
 
                         <div className="icon__textpair">
                             <span className="custom--icon custom--icon--sm calender"></span>

@@ -7,7 +7,7 @@ const ExplorePostView = () => {
     return (
         <>
             <SEO title={"Explore Experiences on Velio"} />
-            <DashboardLayout>
+            <DashboardLayout hideMobileNav>
                 <div className="mint-container">
                 <ExplorePostDetailed />
                 </div>

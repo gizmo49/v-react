@@ -1,28 +1,29 @@
 @import "assets/scss/mixins/mixins.scss";
 @import "assets/scss/_master.scss";
 @import "assets/scss/_include-media-lib/include-media";
+@import "assets/scss/animate/animate.scss";
 
 .btn {
     font-family: $primary_font_family;
     font-weight: 500;
     font-size: 1.125rem;
-    letter-spacing: 0.0.938rem;
+    // letter-spacing: 0.938rem;
     border-radius: 2rem !important;
     // border-radius: 10px;
     padding: 0.438rem 1.438rem;
     height: 56px;
     white-space: nowrap;
     text-transform: capitalize !important;
-    @include media("<=small-screen" ) {
+    @include media("<=small-screen") {
         font-size: 1rem;
     }
     &--add {
         border: 0 !important;
     }
-    
+
     &--connect {
         border: 0 !important;
-        background: #F3F4FA;
+        background: #f3f4fa;
         border-radius: 32px;
         width: fit-content;
         color: #283219;
@@ -36,7 +37,7 @@
     &-primary {
         background: $primary__theme_color !important;
         #{$dark__mode__theme__selector} {
-           background: $dark__mode__primary__theme_color !important;
+            background: $dark__mode__primary__theme_color !important;
         }
     }
     &-sm {
@@ -87,57 +88,55 @@
             color: #6837ef;
         }
     }
-  
 }
 
 .cta__link {
-	display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-	padding: 0 12px;
-	width: 100%;
-	font-size: 14px;
-	letter-spacing: 0.15px;
-	background: $primary__theme_color;
-	text-align: center;
-	font-family: $primary_font_family;
-	// letter-spacing: 0px;
-	text-transform: capitalize;
+    padding: 0 12px;
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 0.15px;
+    background: $primary__theme_color;
+    text-align: center;
+    font-family: $primary_font_family;
+    // letter-spacing: 0px;
+    text-transform: capitalize;
     height: 32px;
 
-	color: #0D0D12 !important;
-	border-radius: 32px;
+    color: #0d0d12 !important;
+    border-radius: 32px;
     svg {
         margin-left: 10px;
     }
-	&.inverse {
-		background: #F6F6F6 !important;
+    &.inverse {
+        background: #f6f6f6 !important;
         color: #283219 !important;
         border: 1px solid #283219 !important;
-	}
+    }
     &.inverse2 {
         background: #fff;
-		color: #000 !important;
+        color: #000 !important;
         border: 1px solid#ECEFF3;
     }
-	// &.bolden {
-	// 	border-radius: 8px;
-	// 	font-family: $secondary_font_family--medium;
-	// }
+    // &.bolden {
+    // 	border-radius: 8px;
+    // 	font-family: $secondary_font_family--medium;
+    // }
     &.lite {
-		color: #fff !important;
+        color: #fff !important;
         background: transparent !important;
     }
-	&.inverse3 {
-		background: #000;
-		color:  $primary__theme_color;
-		border: 1px solid $primary__theme_color;
-	}
-	&.gt__link{
-	
-		text-align: center;
-		width: fit-content;
-	}
+    &.inverse3 {
+        background: #000;
+        color: $primary__theme_color;
+        border: 1px solid $primary__theme_color;
+    }
+    &.gt__link {
+        text-align: center;
+        width: fit-content;
+    }
 }
 
 .back--btn {
@@ -153,5 +152,74 @@
     }
     .go-back {
         margin-right: 5px;
+    }
+}
+
+.ff--btn {
+    margin-left: auto;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    .ff-follow {
+        margin-right: 8px;
+    }
+    span {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 20px;
+        color: $black__theme_color;
+        letter-spacing: -0.01em;
+    }
+}
+
+.icon--btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    &.active {
+        animation: beat 0.3s ease-out;
+        .custom--icon {
+            background-color: #A7D267;;
+        }
+    }
+}
+
+.heart {
+    position: relative;
+    // width: 16px;
+    // height: 16px;
+    .heart-center {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .animation-container {
+        width: 200%;
+        height: 200%;
+        pointer-events: none;
+    }
+
+    .lines {
+        line {
+            stroke: #A7D267;
+            stroke-width: 5px;
+        }
+    }
+    &.active {
+        .heart-icon {
+            path{ fill: #A7D267 !important;}
+            animation: beat 0.3s ease-out;
+        }
+        .ring {
+            transition: transform 0.5s ease-in-out;
+            transform-origin: 50% 50%;
+            transform: scale(10);
+        }
     }
 }

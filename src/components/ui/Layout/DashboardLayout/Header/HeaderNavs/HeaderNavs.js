@@ -19,7 +19,7 @@ const headerNavigation = [
 const HeaderNavs = ({ showByDefault }) => {
 
     return (
-        <div className={`mx-auto ${showByDefault ? '' : 'collapse navbar-collapse'}`} id={showByDefault ? 'generalBar' : 'mynavbar'}>
+        <div className={`mx-auto d-none d-lg-block ${showByDefault ? '' : 'collapse navbar-collapse'}`} id={showByDefault ? 'generalBar' : 'mynavbar'}>
             <ul className='navbar-nav'>
                 {headerNavigation.map((item, index) => (
                     <li

@@ -1,3 +1,4 @@
+@import "assets/scss/_include-media-lib/include-media";
 @import "../master";
 
 .heading1 {
@@ -7,13 +8,25 @@
     &.grey {
         color: #83849a;
     }
+    &.feed--headline  {
+        @include media("<=medium-screen"){
+            font-size: 24px;
+        }
+        @include media("<=small-screen"){
+            font-size: 18px;
+            text-align: center;
+        }
+    }
 }
 .heading2 {
     font-size: 28px;
     font-family: $secondary_font_family--bold;
-    font-weight: bold;
-    letter-spacing: -0.05px;
+    // font-weight: bold;
+    letter-spacing: 0.015em;
     color: #283219;
+    @include media("<=small-screen"){
+        font-size: 22px;
+    }
 }
 .heading3 {
     color: #626374;
@@ -22,6 +35,9 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
     text-align: justify;
+    @include media("<=small-screen"){
+        font-size: 10px;
+    }
 }
 
 .heading7 {
@@ -41,8 +57,8 @@
 }
 .h3-text {
     font-size: 12px;
-    letter-spacing: 0.25px;
-    color: #5c6b7e;
+    letter-spacing: 0.015em;
+    color: #626374;
     line-height: 26px;
     text-align: justify;
     // text-justify: inter-word;

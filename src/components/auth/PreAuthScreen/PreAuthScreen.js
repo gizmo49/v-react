@@ -1,26 +1,8 @@
 import React from 'react';
 import Slider from "react-slick";
 import { Button } from 'components/ui';
-import LazyLoadedImage from 'components/ui/LazyLoadedImage/LazyLoadedImage';
+import GridGallery from 'components/ui/GridGallery/GridGallery';
 import "./PreAuthScreen.scss";
-
-const PreAuthImgGrid = ({ data }) => {
-    return (
-        <div className="custom-grid-wrapper">
-            {
-                (data).map((dt, index) => (
-                    <LazyLoadedImage
-                        key={index}
-                        wrapperClassName={`grid--item ${dt.wrapperAttr}`}
-                        className='grid--img'
-                        src={dt.src}
-                        alt=""
-                    />
-                ))
-            }
-        </div>
-    )
-}
 
 const splashImages1 = [
     {
@@ -106,9 +88,9 @@ const PreAuthScreen = ({removeSplash}) => {
         //     <div className='col-11'>
                 <div>
                     <Slider {...settings}>
-                        <PreAuthImgGrid data={splashImages1} />
-                        <PreAuthImgGrid data={splashImages2} />
-                        <PreAuthImgGrid data={splashImages3} />
+                        <GridGallery data={splashImages1} />
+                        <GridGallery data={splashImages2} />
+                        <GridGallery data={splashImages3} />
                     </Slider>
                     <div className="preauth__txt wide">
                         <h5>Join to unlock the best of Velio</h5>

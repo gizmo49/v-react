@@ -4,35 +4,42 @@ import BucketList from './BucketList/BucketList';
 import { ReactSVG } from 'react-svg';
 import { imageLinks } from 'assets/images';
 import Empty from 'components/ui/Empty/Empty';
+import EditProfileModal from './modals/EditProfileModal/EditProfileModal';
 
 const ProfileHeader = ({ user }) => {
+    const [showProfileModal, toggleProfileModal] = useState(false)
     return (
+        <>
         <div>
             <div className="row" id="profileHeader">
-                <div className="col-lg-10">
+                <div className="col-lg-10 col-8">
                     <div className="row lite__h3p">
                         <div className="col-lg-3">
                             <h3>@{user?.username}</h3>
                             <p>{user?.userRank}</p>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-6">
                             <h3>{user.followers}</h3>
                             <p>Followers</p>
                         </div>
-                        <div className="col-lg-2">
+                        <div className="col-lg-2 col-6">
                             <h3>{user.following}</h3>
                             <p>Experiences</p>
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-2 pe-0">
+                <div className="col-lg-2 col-4 pe-0">
                     <div className="profile--picture">
                         <img src={user?.userImage} alt={user.username} />
-                        <ReactSVG src={imageLinks?.icons?.userBadge} className='user__badge' />
+                        <ReactSVG src={imageLinks?.icons?.userBadge} className='user__badge' onClick={() => toggleProfileModal(true)}/>
                     </div>
                 </div>
             </div>
         </div>
+        {
+            showProfileModal && <EditProfileModal closeModal={() => toggleProfileModal(false)} />
+        }
+        </>
     )
 }
 
@@ -55,7 +62,7 @@ const Profile = () => {
         userRank: "super traveler",
         followers: 40,
         following: 5,
-        userImage: "https://source.unsplash.com/random/200x200/?vacation+girl`"
+        userImage: "https://source.unsplash.com/random/200x200/?vacation+girl"
     }
 
     const renderBasedOnTab = () => {
@@ -81,7 +88,7 @@ const Profile = () => {
                 }}
                 activeElement={currentTab}
             />
-            <div className='mt-5'>
+            <div className='render__wrapper'>
                 {renderBasedOnTab()}
             </div>
         </div>

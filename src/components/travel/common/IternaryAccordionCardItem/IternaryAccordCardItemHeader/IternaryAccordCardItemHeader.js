@@ -22,12 +22,12 @@ const IternaryAccordCardItemHeader = ({ title, createdAt, price, isOpen }) => {
                     <div className='col-1 pe-0'>
 
                     </div>
-                    <div className="col-8">
+                    <div className="col-md-8 col-7">
                         <span className="price">{price}</span>
                     </div>
-                    <div className="col-3">
+                    <div className="col-md-3 col-4">
                         <div className={`accordion__toggle ${isOpen ? 'active' : ""}`}>
-                            <span>{`See ${isOpen ? 'Less' : "More"}`}</span>
+                            <span>{`See ${isOpen ? 'less' : "more"}`}</span>
                             <Arrow />
                         </div>
                     </div>

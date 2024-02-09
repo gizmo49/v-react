@@ -1,3 +1,4 @@
+@import "assets/scss/_include-media-lib/include-media";
 @import "assets/scss/master";
 
 #topHeader {
@@ -10,9 +11,10 @@
         justify-content: unset;
         .navbar-brand {
             margin: 0;
+            // @include media("<=small-screen") {
             //     img,
             //     svg {
-            //         width: 170%;
+            //         width: 85%;
             //     }
             // }
         }
@@ -178,4 +180,13 @@
     margin-bottom: 0;
     gap: 10px;
     padding: 0;
+}
+
+.nav__avatar {
+    margin-left: auto;
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
 }

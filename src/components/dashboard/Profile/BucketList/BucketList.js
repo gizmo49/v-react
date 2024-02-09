@@ -10,7 +10,7 @@ const BucketList = () => {
             </div>
 
             <div className="row">
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-6">
                     <div className="bucket__item">
                         <div className="bucket__group">
                             <LazyLoadedImage loading="lazy" src={`https://source.unsplash.com/random/900×701/?vacation`} alt="" />
@@ -22,7 +22,7 @@ const BucketList = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-6">
                     <div className="bucket__item">
                         <div className="bucket__group">
                             <LazyLoadedImage loading="lazy" src={`https://source.unsplash.com/random/500×300/?vacation`} alt="" />
@@ -33,7 +33,7 @@ const BucketList = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-6">
                     <div className="bucket__item">
                         <div className="bucket__group">
                         <LazyLoadedImage loading="lazy" src={`https://source.unsplash.com/random/702×730/?vacation`} alt="" />
@@ -48,7 +48,7 @@ const BucketList = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-6">
                     <div className="bucket__item">
                         <div className="bucket__group">
                             <LazyLoadedImage loading="lazy" src={`https://source.unsplash.com/random/450×300/?vacation`} alt="" />
@@ -61,7 +61,7 @@ const BucketList = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-6">
                     <div className="bucket__item">
                         <div className="bucket__group">
                             <LazyLoadedImage loading="lazy" src={`https://source.unsplash.com/random/810×700/?vacation`} alt="" />

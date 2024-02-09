@@ -240,7 +240,7 @@ h1.no-content {
     }
 }
 main {
-    margin-top: 90px;
+    margin: 90px 0;
 }
 
 hr {
@@ -251,4 +251,8 @@ hr {
 
 .intl-tel-input .selected-flag {
     width: fit-content !important;
+}
+
+.mb-10x {
+    margin-bottom: 10rem
 }
