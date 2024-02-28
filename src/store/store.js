@@ -1,9 +1,6 @@
-import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-
-import {thunk} from "redux-thunk";
 import rootReducer from "./rootReducer";
 
 const persistConfig = {
@@ -11,13 +8,11 @@ const persistConfig = {
     storage,
     whitelist: []
 };
-export const middleware = [thunk];
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = createStore(
-    persistedReducer,
-    composeWithDevTools(applyMiddleware(...middleware))
-);
+const store = configureStore({
+    reducer: persistedReducer,
+});
 
 export const persistor = persistStore(store);
 export default store;
