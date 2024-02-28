@@ -28,8 +28,8 @@ const BucketListItem = () => {
 
 const SaveToBucketList = ({ show, toggle }) => {
     return (
-        <>
-            <BottomSheet open={show} onDismiss={toggle}>
+        <div className='row justify-content-center'>
+            <BottomSheet open={show} onDismiss={toggle} className='bottom__overlay'>
                 <div className='smart--container'>
                     <div className="save__heading">
                         <h6>Add to bucket list</h6>
@@ -53,7 +53,7 @@ const SaveToBucketList = ({ show, toggle }) => {
 
                 </div>
             </BottomSheet>
-        </>
+        </div>
     );
 };
 

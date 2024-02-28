@@ -892,3 +892,12 @@
 .smart--container {
     padding: 0 24px;
 }
+
+.bottom__overlay {
+    [data-rsbs-overlay]{
+        @include media(">=large-screen") {
+            width: 30%;
+            margin: autos;
+        }
+    }
+}
