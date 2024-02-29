@@ -24,6 +24,13 @@
  
 }
 
+.flex__evenly {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+}
+
 .align_contents_vertical {
     display: flex;
     align-items: center;

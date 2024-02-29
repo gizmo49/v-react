@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './Header/Header';
 
-const DashboardLayout = ({children, hideMobileNav}) => {
+const DashboardLayout = ({children, hideMobileNav, hideNav}) => {
     return (
         <>
-            <Header hideMobileNav={hideMobileNav} />
-            <main>
+            {!hideNav && <Header {...{hideMobileNav}} />}
+            <main className={`${hideNav ? "m-0" : ""}`}>
                 {children}
             </main>
         </>

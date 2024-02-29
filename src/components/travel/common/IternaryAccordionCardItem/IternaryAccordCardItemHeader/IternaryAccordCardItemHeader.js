@@ -7,13 +7,13 @@ const IternaryAccordCardItemHeader = ({ title, createdAt, price, isOpen }) => {
                 <div className='col-1 pe-0 bg-white'>
                     <span className="custom--icon airplane--lg"></span>
                 </div>
-                <div className='col-8'>
+                <div className='col-7'>
                     <div className="sub_text">
                         <h6>{title}</h6>
                     </div>
                 </div>
-                <div className="col-3">
-                    <span className="time">{createdAt}</span>
+                <div className="col-4 text-right">
+                    <span className="time d-block">{createdAt}</span>
                 </div>
             </div>
             <div className="mt-2">

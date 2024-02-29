@@ -9,6 +9,7 @@ import ExploreLocation from "pages/travel/ExploreLocation/ExploreLocation";
 import SignUp from "pages/PublicPages/SignUp/SignUp";
 import ExplorePostView from "pages/travel/ExplorePostView/ExplorePostView";
 import ProfileView from "pages/dashboard/ProfileView/ProfileView";
+import ShareExplorePostView from "pages/travel/ShareExplorePostView/ShareExplorePostView";
 
 function App() {
     return (
@@ -23,6 +24,11 @@ function App() {
                     exact
                     path='/explore/:slug'
                     component={ExplorePostView}
+                />
+                <Route
+                    exact
+                    path='/explore/share/:slug'
+                    component={ShareExplorePostView}
                 />
                 <Route
                     exact

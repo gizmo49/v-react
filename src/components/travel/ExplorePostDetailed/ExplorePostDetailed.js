@@ -100,41 +100,37 @@ const PostIntro = ({ cls }) => {
 }
 
 
-const CardViewItinerary = ({ cls, usePreview, itenaries, setUsingPreview }) => {
+const CardViewItinerary = ({ cls, itenaries }) => {
     return (
         <div className={`itineray__card--view ${cls ? cls : ''}`}>
-            <h3 className="heading3">Itineraries</h3>
-            {usePreview ? <BuyItineraries onSuccess={() => setUsingPreview(false)} /> : <div className="itinerary__group--wrap">
+            <div className="itinerary__group--wrap">
                 {
                     (itenaries).map((item, index) => (
                         <ItinerayCardItem key={index} {...item} />
                     ))
                 }
             </div>
-            }
         </div>
     )
 }
 
 const ExplorePostDetailed = () => {
     let history = useHistory();
-    const [useListView, setViewPreference] = useState(true);
     const [usePreview, setUsingPreview] = useState(true);
+    const [useListView, setViewPreference] = useState(true);
     const [likedPost, toggleLike] = useState(false);
     const [savedPost, toggleSave] = useState(false);
     const [showGalleryModal, toggleGalleryModal] = useState(false);
 
     return (
         <>
-
             <div className=''>
                 <div className="itineray__main d-md-none" style={{ background: `url(${images[0]}) no-repeat` }}>
                     <div className="itineray__main--top">
                         <GoBackButton onClick={() => history.goBack()} type={"simple"} />
                         <ShareButton />
                     </div>
-                    <div className={`itineray__main--bottom ${!useListView ? 'card--view' : ''}`}>
-                        {!useListView && <PostIntro cls="padded inverse" />}
+                    <div className={`itineray__main--bottom`}>
                         <div className="itineray__main--bottom--actions">
                             <div className="sp__pill" onClick={() => setViewPreference(!useListView)}>
                                 <span className="custom--icon custom--icon--sm calender"></span>
@@ -144,41 +140,26 @@ const ExplorePostDetailed = () => {
                                 <span>32+ more images</span>
                             </div>
                         </div>
-                        {!useListView && <CardViewItinerary cls="inverse--heading" {...{ itenaries, usePreview, setUsingPreview }} />}
 
                     </div>
-
                 </div>
-                {useListView && <div className="row">
+                <div className="row">
                     <div className="col-lg-7 mt-2">
                         <div className="col-md-2 d-none d-lg-block">
                             <GoBackButton onClick={() => history.goBack()} />
                         </div>
-
                         <ResponsiveMasonry
                             className='d-none d-lg-block'
-                            columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-                        >
+                            columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
                             <Masonry columnsCount={3} gutter="10px">
                                 {images.map((image, i) => (
-
-
-                                    <div
-                                        key={i}
-                                    // style={{ width: "100%", display: "block" }}
-                                    // initial={{ y: `30%`, opacity: 0 }}
-                                    // animate={{ y: 10, opacity: 1 }}
-                                    // exit={{ y: `-30%`, opacity: 0, zIndex: -1 }}
-                                    // transition={{ duration: 2, delay: 1 * i }}
-
-                                    >
+                                    <div key={i}>
                                         <img
 
                                             src={image}
                                             alt="rec"
                                             className='mason__img'
                                         />
-
                                     </div>
                                 ))}
                             </Masonry>
@@ -197,7 +178,6 @@ const ExplorePostDetailed = () => {
                                             <p>124K followers</p>
                                         </div>
                                     </div>
-
                                     <FollowButton />
                                 </div>
                                 <div className='flex__between mb-3'>
@@ -205,7 +185,7 @@ const ExplorePostDetailed = () => {
                                     <SaveButton onClick={() => toggleSave(!savedPost)} active={savedPost} />
                                     <ReviewSummary className="ms-auto" avgRating={'4.8'} totalRating={16} />
                                 </div>
-                                {useListView && <PostIntro />}
+                                <PostIntro />
                                 <hr />
                                 <div className='my-4 pt-2'>
                                     <h3 className="heading3 mb-3">About Experience</h3>
@@ -236,21 +216,25 @@ const ExplorePostDetailed = () => {
                                 <hr />
                                 <div>
                                     <h3 className="heading3">Itineraries</h3>
-                                    {usePreview ? <BuyItineraries onSuccess={() => setUsingPreview(false)} /> : <div className="itinerary__group">
-                                        {
-                                            (itenaries).map((item, index) => (
-                                                <IternaryAccordionCardItem key={index} {...item}>
-                                                    <IternaryAccordCardItemDetail {...item} />
-                                                </IternaryAccordionCardItem>
-                                            ))
+                                    <div className={`itinerary__group ${usePreview ? 'blurr--all' : ""}`}>
+                                        {!useListView ? <CardViewItinerary {...{ itenaries, usePreview, setUsingPreview }} /> :
+                                            <>
+                                                {
+                                                    (itenaries).map((item, index) => (
+                                                        <IternaryAccordionCardItem key={index} {...item}>
+                                                            <IternaryAccordCardItemDetail {...item} />
+                                                        </IternaryAccordionCardItem>
+                                                    ))
+                                                }
+                                            </>
                                         }
                                     </div>
-                                    }
+                                    {usePreview && <BuyItineraries onSuccess={() => setUsingPreview(false)} />}
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>}
+                </div>
             </div>
             {
                 showGalleryModal && <ItenaryPostsModal closeModal={() => toggleGalleryModal(false)} />
