@@ -917,10 +917,7 @@
 
 .bottom__overlay {
     [data-rsbs-overlay]{
-        @include media(">=medium-screen") {
-            width: 30%;
-            margin: auto;
-        }
+        overflow: hidden;
     }
 }
 
@@ -1012,4 +1009,26 @@
         filter: blur(5px);
     }
 
+}
+
+div[data-rsbs-backdrop]{
+    top: 0 !important;
+}
+// {
+
+// }
+.fixed-top {
+    z-index: 2;
+}
+
+.saved__collection{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #F9FFF1;
+    padding: 20px;
+    .bucket__list {
+        background: transparent;
+        border: 0;
+    }
 }

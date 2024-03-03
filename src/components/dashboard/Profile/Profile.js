@@ -5,6 +5,7 @@ import { ReactSVG } from 'react-svg';
 import { imageLinks } from 'assets/images';
 import Empty from 'components/ui/Empty/Empty';
 import EditProfileModal from './modals/EditProfileModal/EditProfileModal';
+import ExploreFeed from 'components/travel/ExploreFeed/ExploreFeed';
 
 const ProfileHeader = ({ user }) => {
     const [showProfileModal, toggleProfileModal] = useState(false)
@@ -45,6 +46,10 @@ const ProfileHeader = ({ user }) => {
 
 const routeTabs = [
     {
+        id: "experiences",
+        title: "My Experiences"
+    },
+    {
         id: "bucket-list",
         title: "Bucket List"
     },
@@ -67,6 +72,8 @@ const Profile = () => {
 
     const renderBasedOnTab = () => {
         switch (currentTab) {
+            case "experiences":
+                return <ExploreFeed />
             case "bucket-list":
                 return <BucketList />
             case "likes":
