@@ -11,30 +11,9 @@ import ReviewSummary from '../common/ReviewSummary/ReviewSummary';
 import LikeButton from 'components/ui/Button/LikeButton/LikeButton';
 import ShareButton from 'components/ui/Button/ShareButton/ShareButton';
 import ItenaryPostsModal from './ItenaryPosts/ItenaryPostsModal';
+import { uniqueIternaries } from '../ExploreFeed/data';
 
-const images = [
-    "https://source.unsplash.com/random/900×700/?italy+vacation",
-    "https://source.unsplash.com/random/800×900/?maldives+vacation",
-    "https://source.unsplash.com/random/800×900/?jamaica+vacation",
-    "https://source.unsplash.com/random/800×900/?spain+vacation",
-    "https://source.unsplash.com/random/900×700/?maldives+vacation",
-    "https://source.unsplash.com/random/900×700/?jamaica+vacation",
-    "https://source.unsplash.com/random/900×700/?spain+vacation",
-    "https://source.unsplash.com/random/900×700/?austrialia+vacation",
-    "https://source.unsplash.com/random/900×700/?denmark+vacation",
-    "https://source.unsplash.com/random/900×700/?colombia+vacation",
-    "https://source.unsplash.com/random/900×700/?canada+vacation",
-    "https://source.unsplash.com/random/900×700/?new+york+vacation",
-    "https://source.unsplash.com/random/900×700/?florida+vacation",
-    "https://source.unsplash.com/random/900×700/?barcelona+vacation",
-    "https://source.unsplash.com/random/800×900/?austrialia+vacation",
-    "https://source.unsplash.com/random/800×900/?denmark+vacation",
-    "https://source.unsplash.com/random/800×900/?colombia+vacation",
-    "https://source.unsplash.com/random/800×900/?canada+vacation",
-    "https://source.unsplash.com/random/800×900/?new+york+vacation",
-    "https://source.unsplash.com/random/800×900/?florida+vacation",
-    "https://source.unsplash.com/random/800×900/?barcelona+vacation"
-]
+const images = uniqueIternaries;
 
 const itenaries = [
     {

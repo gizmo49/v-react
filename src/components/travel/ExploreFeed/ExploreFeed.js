@@ -1,5 +1,5 @@
 import React from 'react';
-import { sampleFeed } from './data';
+import { sampleFeed, uniqueIternaries } from './data';
 import { Link } from 'react-router-dom';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import ReviewSummary from '../common/ReviewSummary/ReviewSummary';
@@ -7,11 +7,13 @@ import ReviewSummary from '../common/ReviewSummary/ReviewSummary';
 
 const ExplorePost = ({ post, index }) => {
     // const randindex = post.iternaries?.length - 1
-    const coverImage = `https://source.unsplash.com/random/900×70${index}/?vacation`;
+    const randomIndex = uniqueIternaries.length > 0 ? index % uniqueIternaries.length : 0;
+    const coverImage = uniqueIternaries[randomIndex];
+
     return (
         <Link to={`/explore/${post?.slug}`} className="post--minimal">
             <div className="post__flag">
-                <img src="https://source.unsplash.com/random/40X40?us-flag" alt="flag" />
+                <img src="https://plus.unsplash.com/premium_photo-1674590090906-e3ed12522550" alt="flag" />
             </div>
             <div className="img-hover-zoom img-hover-zoom--slowmo">
                 <img src={coverImage} alt={post?.tripName} />
